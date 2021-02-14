@@ -131,9 +131,9 @@ def plot(new,ticker):
 def main():
     
     #download data via fix yahoo finance library
-    stdate=('2016-01-01')
-    eddate=('2018-01-01')
-    ticker=('EA')
+    stdate=('2020-01-01')
+    eddate=('2021-02-01')
+    ticker=('BAJFINANCE.NS')
 
     #slice is used for plotting
     #a two year dataset with 500 variables would be too much for a figure
@@ -153,7 +153,7 @@ def main():
 
     #convert back to time series for plotting
     #so that we get a date x axis
-    new.set_index(new['date'],inplace=True)
+    new.set_index(new['Date'],inplace=True)
 
     #shorten our plotting horizon and plot
     new=new[slicer:]

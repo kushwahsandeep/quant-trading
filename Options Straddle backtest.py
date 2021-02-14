@@ -282,7 +282,7 @@ threshold=2
 
 def main():
     
-    data=pd.ExcelFile('stoxx50.xlsx')
+    data=pd.ExcelFile('F:\Algo Trading\quant-trading\data\stoxx50.xlsx')
     
     aug=data.parse('aug')
     aug.set_index('Dates',inplace=True)

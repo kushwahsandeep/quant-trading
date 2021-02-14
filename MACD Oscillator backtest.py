@@ -116,22 +116,22 @@ def main():
     #there is just one issue
     #entry signal is always late
     #watch out for downward EMA spirals!
-    ma1=int(input('ma1:'))
-    ma2=int(input('ma2:'))
-    stdate=input('start date in format yyyy-mm-dd:')
-    eddate=input('end date in format yyyy-mm-dd:')
-    ticker=input('ticker:')
+    ma1=5 #int(input('ma1:'))
+    ma2=10 #int(input('ma2:'))
+    stdate='2020-12-01' #input('start date in format yyyy-mm-dd:')
+    eddate='2021-02-05' #input('end date in format yyyy-mm-dd:')
+    ticker='IDEA.NS' #input('ticker:')
 
     #slicing the downloaded dataset
     #if the dataset is too large, backtesting plot would look messy
     #you get too many markers cluster together
-    slicer=int(input('slicing:'))
+    slicer=5 #int(input('slicing:'))
 
     #downloading data
     df=yf.download(ticker,start=stdate,end=eddate)
     
     new=signal_generation(df,macd)
-    new=new[slicer:]
+    #new=new[slicer:]
     plot(new, ticker)
 
 
